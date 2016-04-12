@@ -20,8 +20,10 @@ var models = require("./models");
 var db = mongoose.connection;
 
 var router = { 
-	index: require("./routes/index"),
-    chat: require("./routes/chat")
+	  index: require("./routes/index"),
+    sport: require("./routes/sport"),
+    chat: require("./routes/chat"),
+    fac: require("./routes/fac")
 };
 
 var parser = {
@@ -128,7 +130,7 @@ passport.deserializeUser(function(user, done) {
 // Routes
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
-  passport.authenticate('twitter', { successRedirect: '/chat',
+  passport.authenticate('twitter', { successRedirect: '/sport',
                                      failureRedirect: '/' }));
 app.get('/logout', function(req, res){
 	req.logout();
@@ -136,7 +138,11 @@ app.get('/logout', function(req, res){
 })
 
 app.get("/", router.index.view);
+app.get("/sport", router.sport.view);
 app.get("/chat", router.chat.view);
+app.get("/chat/:id", router.chat.view);
+app.get("/fac", router.fac.view);
+app.get("/fac/:id", router.fac.view);
 
 
 io.use(function(socket, next) {
