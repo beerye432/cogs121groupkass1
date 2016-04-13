@@ -8,6 +8,7 @@ var UserSchema = new Mongoose.Schema({
     "photo": String
 });
 
+//will remove
 var NewsFeedSchema = new Mongoose.Schema({
   'user': {
     'displayName': String,
@@ -17,5 +18,21 @@ var NewsFeedSchema = new Mongoose.Schema({
   'posted': { type: Date, default: Date.now() }
 });
 
+var MessageSchema = new Mongoose.Schema({
+  'user': {
+    'displayName': String,
+    'photo': String
+  },
+  'message': String,
+  'posted': { type: Date, default: Date.now() }
+});
+
+var SportsFeedSchema = new Mongoose.Schema({
+  'sport' : String,
+  'messages' : [MessageSchema]
+});
+
 exports.User = Mongoose.model('User', UserSchema);
 exports.NewsFeed = Mongoose.model('NewsFeed', NewsFeedSchema);
+exports.SportsFeed = Mongoose.model('SportsFeed', SportsFeedSchema);
+exports.Message = Mongoose.model('Message', MessageSchema);

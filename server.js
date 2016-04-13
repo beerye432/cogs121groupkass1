@@ -144,6 +144,9 @@ app.get("/chat/:id", router.chat.view);
 app.get("/fac", router.fac.view);
 app.get("/fac/:id", router.fac.view);
 
+app.get("/getChat", router.chat.getChatData)
+app.get("/getChat/:id", router.chat.getChatData)
+
 
 io.use(function(socket, next) {
     session_middleware(socket.request, {}, next);
@@ -157,6 +160,7 @@ io.on('connection', function(socket){
     console.log('user disconnected');
   });
 
+  //remove
   socket.on('newsfeed', function(msg) {
     var user = socket.request.session.passport.user;
 
@@ -173,6 +177,55 @@ io.on('connection', function(socket){
       io.emit('newsfeed', JSON.stringify(news));
     });
   });
+
+  function makeChannel(key) {
+    return function(msg) {
+        var user = socket.request.session.passport.user;
+
+        var newMessage = {
+                            'user': {
+                              'displayName': user._json.screen_name,
+                              'photo': user._json.profile_image_url
+                            },
+                            'message': msg,
+                            'posted': Date.now()
+                          };
+
+        models.SportsFeed.findOne({ "sport": key }, function(err, channel) {
+          if(err) console.log(err);
+          if(!channel) {
+            var newSportsFeed = new models.SportsFeed({
+                          'sport': key,
+                          'messages' : [newMessage]
+            });
+
+            newSportsFeed.save(function(err, data){
+              if(err){
+                console.log(err);
+              }else{
+                io.emit(key, JSON.stringify(newMessage));
+              }
+            });
+          } else {
+              channel.messages.push(newMessage);
+
+              channel.save(function(err, data){
+                if(err){
+                  console.log(err);
+                }else{
+                  io.emit(key, JSON.stringify(newMessage));
+                }
+              });
+          }
+        });
+        
+    };
+  };
+
+  const sports = ["basketball", "badminton", "jogging", "ultimate_frisbee", "tennis", "volleyball"];
+  for(var i=0; i<sports.length; i++){
+    socket.on(sports[i], makeChannel(sports[i]));
+  }
 })
 
 

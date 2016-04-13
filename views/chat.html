@@ -1,11 +1,17 @@
 {{>navbar}}
 <section>
-    <h1>Hello Basketball</h1>
+    <h1>Hello Chat</h1>
+    <div id="inner">
+        <form id="send_message" action="">
+            <input id="user_input" placeholder="Type a new message and hit enter!" autocomplete="off" />
+        </form>
+        <ul id="messages"></ul>
+    </div>
 </section>
 <footer>
     &copy; 2016. COGS 121 Spring 2016
 </footer>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/socket.io.min.js"></script>
-<script src="./js/chatbox.js"></script>
+<script src="./js/sportChat.js"></script>
 <script src="./js/search.js"></script>
