@@ -1,30 +1,5 @@
 {{>navbar}}
 <section>
-    <div id="inner">
-        <form id="send_message" action="">
-            <input id="user_input" placeholder="Type a new message and hit enter!" autocomplete="off" />
-        </form>
-        <ul id="messages">
-            {{#each newsfeed}}
-            <hr>
-            <li>
-                <div class="user">
-                    <div class="user-image">
-                        <img src="{{user.photo}}" alt="">
-                    </div>
-                    <div class="user-info">
-                        <span class="username">{{user.username}}</span>
-                        <br/>
-                        <span class="posted">{{posted}}</span>
-                    </div>
-                </div>
-                <div class="message-content">
-                    {{message}}
-                </div>
-            </li>
-            {{/each}}
-        </ul>
-    </div>
     <a href="/chat?id=basketball">Basketball</a>
     <a href="/chat?id=jogging">Jogging</a>
     <a href="/fac?id=warren_field">Facility</a>
@@ -34,5 +9,4 @@
 </footer>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/socket.io.min.js"></script>
-<script src="./js/chatbox.js"></script>
 <script src="./js/search.js"></script>

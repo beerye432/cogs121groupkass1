@@ -160,24 +160,6 @@ io.on('connection', function(socket){
     console.log('user disconnected');
   });
 
-  //remove
-  socket.on('newsfeed', function(msg) {
-    var user = socket.request.session.passport.user;
-
-    var newNewsFeed = new models.NewsFeed({
-      'user': {
-        'displayName': user._json.screen_name,
-        'photo': user._json.profile_image_url
-      },
-      'message': msg
-    });
-    newNewsFeed.save(function(err, news) {
-      if(err) console.log(err);
-
-      io.emit('newsfeed', JSON.stringify(news));
-    });
-  });
-
   function makeChannel(key) {
     return function(msg) {
         var user = socket.request.session.passport.user;
