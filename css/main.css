@@ -1,0 +1,38 @@
+body{
+  background-color: #102633;
+}
+h1{
+  font-family: Amatic;
+  text-align: center;
+  color: #fec904;
+  word-spacing: 15px;
+  letter-spacing: 5px;
+  font-size: 100px;
+}
+
+.choose{
+  margin-top: 100px;
+}
+.icon{
+  margin-top: 0px;
+  display: inline-block;
+  text-align: center;
+  font-size: 0px;
+  height: 800px;
+}
+
+.icon img{
+  display: inline-block;
+  margin: 0px;
+  width:30%;
+
+}
+
+@font-face{
+   font-family:fox in the snow;
+   src:url(fox in the snow.ttf);
+}
+@font-face{
+  font-family:Typewriter;
+  src:url(Typewriter Press.ttf);
+}
