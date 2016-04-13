@@ -1,11 +1,11 @@
 var models = require("../models");
-const sports = ["basketball", "badminton", "jogging", "ultimate_frisbee", "tennis", "volleyball"];
+const fac = [];
 
 exports.view = function(req, res) {
     /* TODO */
     var facID = req.query.id;
     //redirect if not correct parameter
-    if(req.query == null || facID == null || sports.indexOf(sportID) == -1){
+    if(req.query == null || facID == null /*|| fac.indexOf(facID) == -1*/){
     	res.redirect("/sport");
     	return;
     }
