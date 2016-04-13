@@ -135,17 +135,25 @@ app.get('/auth/twitter/callback',
 app.get('/logout', function(req, res){
 	req.logout();
 	res.redirect('/');
-})
+});
+
+function loggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.redirect('/');
+    }
+}
 
 app.get("/", router.index.view);
-app.get("/sport", router.sport.view);
-app.get("/chat", router.chat.view);
-app.get("/chat/:id", router.chat.view);
-app.get("/fac", router.fac.view);
-app.get("/fac/:id", router.fac.view);
+app.get("/sport", loggedIn, router.sport.view);
+app.get("/chat", loggedIn, router.chat.view);
+app.get("/chat/:id", loggedIn, router.chat.view);
+app.get("/fac", loggedIn, router.fac.view);
+app.get("/fac/:id", loggedIn, router.fac.view);
 
-app.get("/getChat", router.chat.getChatData)
-app.get("/getChat/:id", router.chat.getChatData)
+app.get("/getChat", loggedIn, router.chat.getChatData)
+app.get("/getChat/:id", loggedIn, router.chat.getChatData)
 
 
 io.use(function(socket, next) {
