@@ -1,18 +1,21 @@
 body {
-  /*background-image: url("../img/bg.png");*/
-  /*background-repeat: repeat;*/
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #102633;
 }
 
 header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 65px;
+  height: 50px;
   width: 100%;
-  background-color: #f5f5f5;
-  box-shadow: 0 1px 10px #9e9e9e;
-  -webkit-overflow-scrolling: touch;
+  background-color: #FEC904;
+  box-shadow: 0px 1px 3px #9e9e9e;
+
+  color: #FFFFFF;
+  font-size: 35px;
+  font-family: 'Impact', sans-serif;
+  text-align: center;
 }
 
 header .logout {
@@ -30,10 +33,41 @@ header .logout-button {
   right: 10px;
 }
 
+ul.navbar {
+  list-style-type: none; /* Removes bullet points */
+}
+
+li.navbar {
+  float: left;
+}
+
+li.navbar#back {
+  width: 10%;
+  margin: -0.35% 0 0 -1.5%;
+}
+
+li.navbar#appname {
+  width: 80%;
+}
+
+li.navbar#logout {
+  width: 10%;
+  margin: -0.15% 1% 0 0;
+}
+
+li.navbar a {
+  color: #FFFFFF;
+}
+
+li.navbar a:hover {
+  color: #102633;
+}
+
 section {
   margin-top: 65px;
   padding-top: 25px;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 #inner {
@@ -204,11 +238,11 @@ footer {
 }
 
 .login-content {
-    position: fixed;
-    top: 0; bottom: 0; left: 0; right: 0;
-    max-width: 100%;
-    max-height: 100%;
-    background-color: rgba(10, 10, 10, .7);
-    /*z-index: -1;*/
-    color: #FFFFFF;
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: rgba(10, 10, 10, .7);
+  /*z-index: -1;*/
+  color: #FFFFFF;
 }
