@@ -3,9 +3,13 @@ COGS 121 Group K Assignment 1
 TASKS
 
 Brian: facilities' pages and json, leaflet
+
 Tim: initial setup & skeleton, Twitter, Passport, Mongo history, merge conflicts
+
 Ellen: login page, topbar, overall functionality/design consistency, readme
+
 Shuyu: sport chat pages & routes to facilities
+
 Jiaying: sports page, help page
 
 HEURISTICS
@@ -27,8 +31,6 @@ HEURISTICS
 8. Aesthetic and Minimalist Design - This is addressed with using icons to represent words (e.g., back, logout, sports) and the overall lack of text, keeping only what is most important and pleasing to the eye.
 
 9. Help Users Recognize, Diagnose, and Recover from Errors
-Delete a message from the chat
-404 page
 
 10. Help and Documentation - This is addressed with a Help page.
 
