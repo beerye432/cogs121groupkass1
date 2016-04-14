@@ -16,15 +16,19 @@ h1{
 .icon{
   margin-top: 0px;
   display: inline-block;
-  text-align: center;
   font-size: 0px;
   height: 800px;
+  
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;   
+  flex-wrap: wrap;
 }
 
 .icon img{
   display: inline-block;
   margin: 0px;
-  width:30%;
+  width: 
 
 }
 
