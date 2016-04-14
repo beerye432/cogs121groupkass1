@@ -72,7 +72,7 @@ section {
   padding-top: 25px;
   width: 100%;
   font-family: 'Roboto', sans-serif;
-}*/
+}
 
 #inner {
   display: table;
@@ -232,24 +232,19 @@ footer {
   color: #FFFFFF;   
   background-color: transparent;    
   /*background-color: rgba(10, 10, 10, .1);*/   
- -}   
- -    
- -.login {    
- -  background-color: #000000;    
- -  background-image: url("../img/login.png");    
- -  background-repeat: no-repeat;   
- -  background-attachment: fixed;   
- -  background-position: center;    
- -  background-size: cover;   
- -  position: fixed;    
- -  top: 0; bottom: 0; left: 0; right: 0;   
-@timothyk7     cogs121groupk member
-timothyk7 added a note 14 minutes ago
-why is this deleted
- Add a line note
-        
- -  color: #FFFFFF;   
- -  font-family: 'Bangers', cursive;    
+ }   
+     
+ .login {    
+   background-color: #000000;    
+   background-image: url("../img/login.png");    
+   background-repeat: no-repeat;   
+   background-attachment: fixed;   
+   background-position: center;    
+   background-size: cover;   
+   position: fixed;    
+   top: 0; bottom: 0; left: 0; right: 0;         
+   color: #FFFFFF;   
+   font-family: 'Bangers', cursive;    
   }
 
 .facButton{
@@ -267,8 +262,14 @@ why is this deleted
   width: 800px !important;
   display:inline-block;
   margin-left: 3%;
-
-  
 }
+.login-shadow {
+   position: fixed;
+   top: 0; bottom: 0; left: 0; right: 0;
+   max-width: 100%;
+   max-height: 100%;
+   background-color: rgba(16, 45, 73, .7);
+   z-index: -1;
+ }
  
 
