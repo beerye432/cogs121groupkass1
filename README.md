@@ -2,15 +2,15 @@ COGS 121 Group K Assignment 1
 
 TASKS
 
-Brian: facilities' pages and json, leaflet
+- Brian: facilities' pages and json, leaflet
 
-Tim: initial setup & skeleton, Twitter, Passport, Mongo history, merge conflicts
+- Tim: initial setup & skeleton, Twitter, Passport, Mongo history, merge conflicts
 
-Ellen: login page, topbar, overall functionality/design consistency, readme
+- Ellen: login page, topbar, overall functionality/design consistency, readme
 
-Shuyu: sport chat pages & routes to facilities
+- Shuyu: sport chat pages & routes to facilities
 
-Jiaying: sports page, help page
+- Jiaying: sports page, help page
 
 HEURISTICS
 
