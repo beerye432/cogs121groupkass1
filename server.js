@@ -23,7 +23,8 @@ var router = {
 	  index: require("./routes/index"),
     sport: require("./routes/sport"),
     chat: require("./routes/chat"),
-    fac: require("./routes/fac")
+    fac: require("./routes/fac"),
+    help: require("./routes/help")
 };
 
 var parser = {
@@ -151,6 +152,7 @@ app.get("/chat", loggedIn, router.chat.view);
 app.get("/chat/:id", loggedIn, router.chat.view);
 app.get("/fac", loggedIn, router.fac.view);
 app.get("/fac/:id", loggedIn, router.fac.view);
+app.get("/help", loggedIn, router.help.view);
 
 app.get("/getChat", loggedIn, router.chat.getChatData)
 app.get("/getChat/:id", loggedIn, router.chat.getChatData)
