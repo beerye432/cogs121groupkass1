@@ -2,8 +2,8 @@ COGS 121 Group K Assignment 1
 
 TASKS
 
-Brian: facilities' pages and json
-Tim: initial setup & skeleton, Twitter, Passport, Mongo history
+Brian: facilities' pages and json, leaflet
+Tim: initial setup & skeleton, Twitter, Passport, Mongo history, merge conflicts
 Ellen: login page, topbar, overall functionality/design consistency, readme
 Shuyu: sport chat pages & routes to facilities
 Jiaying: sports page, help page
@@ -16,11 +16,11 @@ HEURISTICS
 
 3. User Control and Freedom - This is addressed with a back button on every page and the option to go back to the home page by clicking on the app title in the topbar.
 
-4. Consistency and Standards - This is addressed with a typical top bar and easily-identifiable, basic buttons to navigate.
+4. Consistency and Standards - This is addressed with a typical top bar; easily-identifiable, basic buttons to navigate; and the positioning of the affirmative logout button on the right (in the logout confirmation popup).
 
 5. Error Prevention - This is addressed with a popup box confirming if you really want to log out and with adequate spacing between buttons to keep from accidentally pressing the button next to the one the user wants.
 
-6. Recognition Rather than Recall - This is addressed with having a topbar on every page so that the user doesn't have to recall how to logout or to go back, and it is also addressed with having labels at the top of each page saying where the user is rather than the user having to recall which sport was chosen.
+6. Recognition Rather than Recall - This is addressed with having a topbar on every page so that the user doesn't have to recall how to logout or to go back; it is also addressed with having labels at the top of each page saying where the user is rather than the user having to recall which sport was chosen; and it is also addressed with the logout button in the logout confirmation popup as bright yellow color while the cancel button is gray.
 
 7. Flexibility and Efficiency of Use - This is addressed with being able to click the app title in the topbar to go back to the home screen with the list of sports.
 
