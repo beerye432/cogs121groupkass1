@@ -74,6 +74,7 @@ section {
   display: table;
   margin: 0 auto;
   width: 800px;
+  float:left;
 }
 
 form {
@@ -207,6 +208,7 @@ footer {
 @media only screen and (max-width:825px) {
   #inner {
     width: 95%;
+
   }
 
   #messages {
@@ -246,3 +248,23 @@ footer {
   /*z-index: -1;*/
   color: #FFFFFF;
 }
+
+.facButton{
+  background-color: #102633;
+
+}
+#facWrapper{
+ float:right; 
+ width: 25%;
+ position:absolute;
+ right:3%;
+ top:15%;
+}
+#chatbox{
+  width: 800px !important;
+  display:inline-block;
+  margin-left: 3%;
+
+  
+}
+ 
