@@ -22,6 +22,17 @@ section {
   font-family: 'Roboto', sans-serif;
 }
 
+section a {
+  /*color: #102633;*/
+  text-decoration: none;
+}
+
+section a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
 /***** Start of topbar code *****/
 
 header {
@@ -204,11 +215,21 @@ li.logout-list a{
 .help {
   margin: 7% 0 0 0;
   position: fixed;
+  overflow: scroll;
   top: 0; bottom: 0; left: 0; right: 0;
   z-index: -1;
 }
 
 .help h1 {
+  margin: 0 0 2% 0;
+}
+
+.instruction h2 {
+  margin: 0 0 .8% 0;
+}
+
+.instruction p {
+  font-size: 1.5vw;
   margin: 0 0 2% 0;
 }
 
@@ -417,10 +438,11 @@ footer {
  top:20%;
  z-index: 0;
 }
+
 #chatbox{
   width: 850px !important;
   display:inline-block;
-  margin-left: 3%;
+  margin-left: 3%;;
 }
 
 /***** End of code for login page *****/
