@@ -78,6 +78,7 @@ section {
   display: table;
   margin: 0 auto;
   width: 800px;
+  float:left;
 }
 
 form {
@@ -211,6 +212,7 @@ footer {
 @media only screen and (max-width:825px) {
   #inner {
     width: 95%;
+
   }
 
   #messages {
@@ -218,39 +220,56 @@ footer {
   }
 }
 
-.btn-login {
-  width: 40%;
-  height: 11%;
-  border: 3px solid white;
-  font-size: 3vh;
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
-  color: #FFFFFF;
-  background-color: transparent;
-  /*background-color: rgba(10, 10, 10, .1);*/
+.btn-login {    
+  width: 40%;   
+  height: 11%;    
+  border: 3px solid white;    
+  font-size: 3vh;   
+  font-family: 'Roboto', sans-serif;    
+  text-decoration: none;    
+  display: inline-block;    
+  font-weight: bold;    
+  color: #FFFFFF;   
+  background-color: transparent;    
+  /*background-color: rgba(10, 10, 10, .1);*/   
+ }   
+     
+ .login {    
+   background-color: #000000;    
+   background-image: url("../img/login.png");    
+   background-repeat: no-repeat;   
+   background-attachment: fixed;   
+   background-position: center;    
+   background-size: cover;   
+   position: fixed;    
+   top: 0; bottom: 0; left: 0; right: 0;         
+   color: #FFFFFF;   
+   font-family: 'Bangers', cursive;    
+  }
+
+.facButton{
+  background-color: #102633;
+
 }
-
-.login {
-  background-color: #000000;
-  background-image: url("../img/login.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  position: fixed;
-  top: 0; bottom: 0; left: 0; right: 0;
-
-  color: #FFFFFF;
-  font-family: 'Bangers', cursive;
+#facWrapper{
+ float:right; 
+ width: 25%;
+ position:absolute;
+ right:3%;
+ top:15%;
 }
-
+#chatbox{
+  width: 800px !important;
+  display:inline-block;
+  margin-left: 3%;
+}
 .login-shadow {
-  position: fixed;
-  top: 0; bottom: 0; left: 0; right: 0;
-  max-width: 100%;
-  max-height: 100%;
-  background-color: rgba(16, 45, 73, .7);
-  z-index: -1;
-}
+   position: fixed;
+   top: 0; bottom: 0; left: 0; right: 0;
+   max-width: 100%;
+   max-height: 100%;
+   background-color: rgba(16, 45, 73, .7);
+   z-index: -1;
+ }
+ 
+
