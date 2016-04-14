@@ -306,6 +306,7 @@ input:focus {
 
 .user {
   display: inline-block;
+  color: black;
 }
 
 .user-image {
@@ -412,7 +413,7 @@ footer {
  float:right; 
  width: 30%;
  position:absolute;
- right:6%;
+ right:3%;
  top:20%;
  z-index: 0;
 }
@@ -425,5 +426,5 @@ footer {
 /***** End of code for login page *****/
 
 .instruction{
-  font-size: 25px;
+  font-size: 20px;
 }
