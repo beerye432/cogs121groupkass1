@@ -450,7 +450,7 @@ input:focus {
   .choose {
     padding-top: 2em;
     margin-top: -2%;
-    position: relative;
+    position: inherit;
     z-index: -1;
   }
 
