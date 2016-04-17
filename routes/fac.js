@@ -1,4 +1,6 @@
 var models = require("../models");
+var facilities = require("../facilities.json");
+
 const fac = [];
 
 exports.view = function(req, res) {
@@ -10,5 +12,5 @@ exports.view = function(req, res) {
     	return;
     }
     console.log(facID);
-    res.render("fac");
+    res.render("fac", facilities["facilities"][facID]);
 };

@@ -28,14 +28,14 @@
 
 <div id = "facWrapper">
   <p id = "where" style="font-size: 2vw; font-weight: bold; text-align: center"> Don't know where to play?<br>Here are some ideas! </p>
-	<div id = "button1" class = "facButton">
+<!-- 	<div id = "button1" class = "facButton">
 	</div>
 	<div id = "button2" class = "facButton">
     </div>
     <div id = "button3" class = "facButton">
     </div>
- </div>
-
+ </div> -->
+ <ul id="facilities"></ul>
  </div>
 
 <!-- <footer>
@@ -44,52 +44,51 @@
 <script src="./js/jquery.min.js"></script>
 <script src="./js/socket.io.min.js"></script>
 <script src="./js/sportChat.js"></script>
-<script src="./js/search.js"></script>
 <script>
-  var windowNum = window.location.href.split("=");
-  var sportName = windowNum[1];
+//   var windowNum = window.location.href.split("=");
+//   var sportName = windowNum[1];
 
 
-  if(sportName == "ultimate_frisbee"){
-    $("#sport").html("frisbee");
-  }
-  else{
-    $("#sport").html(sportName);
-  }
+//   if(sportName == "ultimate_frisbee"){
+//     $("#sport").html("frisbee");
+//   }
+//   else{
+//     $("#sport").html(sportName);
+//   }
 
-  if(sportName == "basketball"){
-  	$("#button1").append("<a href = '/fac?id=0' class='facLink'><img src='http://sportsfac.ucsd.edu/_images/rimac/aux-gym.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Rimac Auxiliary Gym</p></a>");
-  	$("#button2").append("<a href = '/fac?id=1'><img src='https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Muir Courts</p></a>");
-  	$("#button3").append("<a href = '/fac?id=2'><img src='http://www.landscapeonline.com/research/lasn/2014/06/img/25609/25609-7.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Revelle Outdoor Courts</p></a>");
-  }
+//   if(sportName == "basketball"){
+//   	$("#button1").append("<a href = '/fac?id=0' class='facLink'><img src='http://sportsfac.ucsd.edu/_images/rimac/aux-gym.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Rimac Auxiliary Gym</p></a>");
+//   	$("#button2").append("<a href = '/fac?id=1'><img src='https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Muir Courts</p></a>");
+//   	$("#button3").append("<a href = '/fac?id=2'><img src='http://www.landscapeonline.com/research/lasn/2014/06/img/25609/25609-7.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Revelle Outdoor Courts</p></a>");
+//   }
 
-  else if(sportName == "badminton"){
-    $("#button1").append("<a href = '/fac?id=3'><img src='http://sportsfac.ucsd.edu/_images/main-gym/main-floor2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Main Gym</p></a>");
-    $("#button2").append("<a href = '/fac?id=4'><img src='http://sportsfac.ucsd.edu/_images/main-gym/rec-gym2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Recreation Gym</p></a>");
-    $("#button3").append("<a href = '/fac?id=0'><img src='http://sportsfac.ucsd.edu/_images/rimac/aux-gym.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Rimac Auxiliary Gym</p></a>");
-  }
+//   else if(sportName == "badminton"){
+//     $("#button1").append("<a href = '/fac?id=3'><img src='http://sportsfac.ucsd.edu/_images/main-gym/main-floor2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Main Gym</p></a>");
+//     $("#button2").append("<a href = '/fac?id=4'><img src='http://sportsfac.ucsd.edu/_images/main-gym/rec-gym2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Recreation Gym</p></a>");
+//     $("#button3").append("<a href = '/fac?id=0'><img src='http://sportsfac.ucsd.edu/_images/rimac/aux-gym.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Rimac Auxiliary Gym</p></a>");
+//   }
 
-  else if(sportName == "jogging"){
-    $("#where").html("Don't know where to run?<br>Here are some ideas!");
-  	$("#button1").append("<a href = '/fac?id=5'><img src='http://dirttreaders.com/phpBB3/gallery/pic.php?mode=lrg&pic_id=5781' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Eucalyptus Grove</p></a>");
-  	$("#button2").append("<a href = '/fac?id=6'><img src='http://sportsfac.ucsd.edu/_images/track/track.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>UCSD Spanos Track</p></a>");
-  	 $("#button3").append("<a href = '/fac?id=11'><img src='http://static1.squarespace.com/static/56b065733c44d81dc1cf6739/t/56cbb3abe32140833fc5509f/1456190429075/' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Campus Loop</p></a>");
-  }
+//   else if(sportName == "jogging"){
+//     $("#where").html("Don't know where to run?<br>Here are some ideas!");
+//   	$("#button1").append("<a href = '/fac?id=5'><img src='http://dirttreaders.com/phpBB3/gallery/pic.php?mode=lrg&pic_id=5781' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Eucalyptus Grove</p></a>");
+//   	$("#button2").append("<a href = '/fac?id=6'><img src='http://sportsfac.ucsd.edu/_images/track/track.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>UCSD Spanos Track</p></a>");
+//   	 $("#button3").append("<a href = '/fac?id=11'><img src='http://static1.squarespace.com/static/56b065733c44d81dc1cf6739/t/56cbb3abe32140833fc5509f/1456190429075/' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Campus Loop</p></a>");
+//   }
 
-  else if(sportName == "ultimate_frisbee"){
-  	$("#button1").append("<a href = '/fac?id=7'><img src='https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Muir Field</p></a>");
-  	$("#button2").append("<a href = '/fac?id=8'><img src='http://i.ytimg.com/vi/nE7V-cr78FQ/0.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Warren Field</p></a>");
-  	 $("#button3").append("<a href = '/fac?id=9'><img src='http://sportsfac.ucsd.edu/_images/fields/rimac-field4.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>NCRA Field</p></a>");
-  }
-  else if(sportName == "tennis"){
-  	$("#button1").append("<a href = '/fac?id=10'><img src='http://sportsfac.ucsd.edu/_images/outdoor/northview-tennis-courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>North Campus Courts</p></a>");
-  	$("#button2").append("<a href = '/fac?id=1'><img src='https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Muir Courts</p></a>");
-  	$("#button3").append("<a href = '/fac?id=12'><img src='http://sportsfac.ucsd.edu/_images/outdoor/ncra-tennis-courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Marshall College Courts</p></a>");
-  }
-   else if(sportName == "volleyball"){
-  	$("#button1").append("<a href = '/fac?id=4'><img src='http://sportsfac.ucsd.edu/_images/main-gym/main-floor2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Main Gym</p></a>");
-  	$("#button2").append("<a href = '/fac?id=0'><img src='http://sportsfac.ucsd.edu/_images/rimac/aux-gym.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Rimac Auxiliary Gym</p></a>");
-    $("#button3").append("<a href = '/fac?id=4'><img src='http://sportsfac.ucsd.edu/_images/main-gym/rec-gym2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Recreation Gym</p></a>");
-  }
+//   else if(sportName == "ultimate_frisbee"){
+//   	$("#button1").append("<a href = '/fac?id=7'><img src='https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Muir Field</p></a>");
+//   	$("#button2").append("<a href = '/fac?id=8'><img src='http://i.ytimg.com/vi/nE7V-cr78FQ/0.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Warren Field</p></a>");
+//   	 $("#button3").append("<a href = '/fac?id=9'><img src='http://sportsfac.ucsd.edu/_images/fields/rimac-field4.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>NCRA Field</p></a>");
+//   }
+//   else if(sportName == "tennis"){
+//   	$("#button1").append("<a href = '/fac?id=10'><img src='http://sportsfac.ucsd.edu/_images/outdoor/northview-tennis-courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>North Campus Courts</p></a>");
+//   	$("#button2").append("<a href = '/fac?id=1'><img src='https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Muir Courts</p></a>");
+//   	$("#button3").append("<a href = '/fac?id=12'><img src='http://sportsfac.ucsd.edu/_images/outdoor/ncra-tennis-courts.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Marshall College Courts</p></a>");
+//   }
+//    else if(sportName == "volleyball"){
+//   	$("#button1").append("<a href = '/fac?id=4'><img src='http://sportsfac.ucsd.edu/_images/main-gym/main-floor2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Main Gym</p></a>");
+//   	$("#button2").append("<a href = '/fac?id=0'><img src='http://sportsfac.ucsd.edu/_images/rimac/aux-gym.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Rimac Auxiliary Gym</p></a>");
+//     $("#button3").append("<a href = '/fac?id=4'><img src='http://sportsfac.ucsd.edu/_images/main-gym/rec-gym2.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Recreation Gym</p></a>");
+//   }
 
 </script>

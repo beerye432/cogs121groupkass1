@@ -1,6 +1,13 @@
 var socket = io();
 $(document).ready(function() {
+    const sportName = getParameterByName("id");
+    if(sportName == "ultimate_frisbee"){
+        $("#sport").html("frisbee");
+    } else {
+        $("#sport").html(sportName);
+    }
 	getChatHistory();
+    getFacilities();
     onSubmit();
     newsfeed();
 });
@@ -32,6 +39,14 @@ function getChatHistory(){
 	});
 }
 
+function getFacilities(){
+    $.get( "/getFacilities?id="+getParameterByName("id"), function(results) {
+        for(var i=0; i<results["facilities"].length; i++){ //id and facility array should be same size
+            $('#facilities').append($('<li>').html(facilityTemplate(results, i)));
+        }
+    });
+}
+
 function messageTemplate(template) {
   var result = '<div class="user">' +
     '<div class="user-image">' +
@@ -46,6 +61,16 @@ function messageTemplate(template) {
     template.message +
     '</div>';
   return result;
+}
+
+function facilityTemplate(result, index){
+    var template =  '<div class = "facButton">'+
+        '<a href = "/fac?id='+result["ids"][index]+'" class="facLink">'+
+        '<img src="'+result["facilities"][index].pic+'" height="120" width="100%"" class = "img">' +
+        '<p class="facName">'+result["facilities"][index].name+'</p>'+
+        '</a>'+
+        '</div>';
+    return template;
 }
 
 

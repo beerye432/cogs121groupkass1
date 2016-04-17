@@ -470,7 +470,13 @@ input:focus {
   }
 }
 
+#facilities {
+  list-style-type: none;
+}
+
 /***** End of code for chat.html *****/
+
+
 
 footer {
   text-align: center;
