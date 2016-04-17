@@ -53,8 +53,9 @@ header {
 }
 
 .navbar.nav-title {
-  position: fixed;
-  margin-left: 39vw;
+  vertical-align: center;
+  margin-left: 10%;
+  /*margin-left: 39vw;*/
 }
 
 ul.navbar {
@@ -64,10 +65,14 @@ ul.navbar {
   /*z-index: 3;*/
 }
 
+li.navbar {
+  display: inline;
+}
+
 li.navbar#back {
   float: left;
   width: 4%;
-  margin: -0.3% 0 0 0;
+  margin: -5px 0 0 -25px;
 }
 
 li.navbar.right {
@@ -380,6 +385,12 @@ footer {
 
   #messages {
     margin-top: 20px;
+  }
+
+  li.navbar.right {
+    float: right;
+    width: 4%;
+    margin: 0 10.5% 0 0;
   }
 }
 
