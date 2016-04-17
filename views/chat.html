@@ -1,15 +1,17 @@
 {{>navbar}}
 
 <div class="sport-title">
-  <h1 id = "sport" style = "font-size:7.5vw"></h1>
+  <h2 id = "sport"></h2>
 </div>
+
+<div class="chatWrapper">
 
 <section id = "chatbox">
     <div id="inner">
-        <form id="send_message" action="">
-            <input id="user_input" placeholder="Chat here to find other players!" autocomplete="off" />
-        </form>
         <ul id="messages"></ul>
+        <form id="send_message" action="">
+            <input id="user_input" placeholder="Type here and press enter to get started!" autocomplete="off" />
+        </form>
     </div>
 </section>
 
@@ -25,14 +27,15 @@
 </section>
 
 <div id = "facWrapper">
-
-  <p id = "where" style="font-size: 2.5vw; font-weight: bold; text-align: center"> Don't know where to play?<br>Here are some ideas! </p>
+  <p id = "where" style="font-size: 2vw; font-weight: bold; text-align: center"> Don't know where to play?<br>Here are some ideas! </p>
 	<div id = "button1" class = "facButton">
 	</div>
 	<div id = "button2" class = "facButton">
     </div>
     <div id = "button3" class = "facButton">
     </div>
+ </div>
+
  </div>
 
 <!-- <footer>
@@ -48,7 +51,7 @@
 
 
   if(sportName == "ultimate_frisbee"){
-    $("#sport").html("Ultimate");
+    $("#sport").html("frisbee");
   }
   else{
     $("#sport").html(sportName);
@@ -67,7 +70,7 @@
   }
 
   else if(sportName == "jogging"){
-    $("#where").html("Where to run:");
+    $("#where").html("Don't know where to run?<br>Here are some ideas!");
   	$("#button1").append("<a href = '/fac?id=5'><img src='http://dirttreaders.com/phpBB3/gallery/pic.php?mode=lrg&pic_id=5781' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Eucalyptus Grove</p></a>");
   	$("#button2").append("<a href = '/fac?id=6'><img src='http://sportsfac.ucsd.edu/_images/track/track.jpg' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>UCSD Spanos Track</p></a>");
   	 $("#button3").append("<a href = '/fac?id=11'><img src='http://static1.squarespace.com/static/56b065733c44d81dc1cf6739/t/56cbb3abe32140833fc5509f/1456190429075/' alt='some_text' height='120' width='100%' class = 'img'><p class='facName'>Campus Loop</p></a>");
