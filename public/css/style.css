@@ -392,6 +392,27 @@ footer {
     width: 4%;
     margin: 0 10.5% 0 0;
   }
+
+  .choose {
+    margin-top: -2%;
+    position: relative;
+    z-index: -1;
+  }
+
+  .icon {
+    margin-top: 0px;
+    display: inline-block;
+    font-size: 0px;
+  }
+
+  .icon img {
+    /*display: inline-block;*/
+    margin: 0px;
+    height: 50%;
+    width: 35%;
+    opacity: 0.8;
+    z-index: 2;
+  }
 }
 
 /***** Start of code for login page *****/   
