@@ -89,7 +89,7 @@ function messageTemplate(template) {
 function facilityTemplate(result, index){
     var template =  '<div class = "facButton">'+
         '<a class = "facButtonAnchor" href = "/fac?id='+result["ids"][index]+'" class="facLink">'+
-        '<img src="'+result["facilities"][index].pic+'" height="120" width="100%"" class = "img">' +
+        '<img src="'+result["facilities"][index].pic+'" height="120" width="85%"" class = "img">' +
         '<p class="facName">'+result["facilities"][index].name+'</p>'+
         '</a>'+
         '</div>';
