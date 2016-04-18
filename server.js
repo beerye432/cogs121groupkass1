@@ -222,6 +222,9 @@ io.on('connection', function(socket){
   }
 })
 
+app.use(function(req,res){
+    res.render('error404');
+});
 
 // Start Server
 http.listen(app.get("port"), function() {

@@ -304,17 +304,25 @@ h2#sport {
   background-color: #102633;
 }
 
+.facButton:hover{
+  opacity: 1;
+}
+
 p.facName {
   color: #FFFFFF;
   font-size: 1.3vw;
   margin: 0 0 5% 0;
 }
 
+.facButtonAnchor{
+  text-decoration: none;
+}
+
 #facWrapper{
  width: 30%;
  position: absolute;
  right: 3%;
- top: 32%;
+ top: 28%;
  z-index: 0;
  display:inline-block;
 }
@@ -365,6 +373,8 @@ input:focus {
   border-radius: 3px;
   list-style-type: none;
   padding: 0;
+  height: 550px;
+  overflow: scroll;
   font-size: 14px;
   font-color: black;
 }
