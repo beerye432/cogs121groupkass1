@@ -1,4 +1,6 @@
 var socket = io();
+var text_max = 140;
+
 $(document).ready(function() {
     const sportName = getParameterByName("id");
     if(sportName == "ultimate_frisbee"){
@@ -10,6 +12,17 @@ $(document).ready(function() {
     getFacilities();
     onSubmit();
     newsfeed();
+
+    
+    $('#textarea_feedback').html(text_max + ' characters remaining');
+
+    $('#user_input').keyup(function() {
+        var text_length = $('#user_input').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+    });
+
 });
 
 function onSubmit(){
@@ -19,30 +32,29 @@ function onSubmit(){
 
     console.log($('#user_input').val().length);
 
-    if($('#user_input').val().length == 0 || $('#user_input').val().length > 140){
-        alert("Please make your message between 0 and 140 characters");
-
-        window.location.href = url;
+    if($('#user_input').val().length == 0 || $('#user_input').val().length > text_max){
+        alert("Please make your message between 0 and "+text_max+" characters");
     }
     else{
       	console.log(getParameterByName("id"));
         socket.emit(getParameterByName("id"), $('#user_input').val());
+        var height = 0;
+
+        $('#messages li').each(function(i, value){
+            height += parseInt($(this).height());
+        });
+        
+        height += '';
+
+        $('#messages').animate({scrollTop: height});
+
+        $('#user_input').val('');
     }
 
-    var height = 0;
-
-    $('#messages li').each(function(i, value){
-        height += parseInt($(this).height());
-    });
-
-    height += '';
-
-    $('#messages').animate({scrollTop: height});
-
-    $('#user_input').val('');
     return false;
   });
 }
+
 
 function newsfeed(){
 	console.log("newsfeed: "+getParameterByName("id"));
@@ -55,11 +67,17 @@ function newsfeed(){
 }
 
 function getChatHistory(){
-	$.get( "/getChat?id="+getParameterByName("id"), function(results) {
-		results.forEach(function(result){
-			$('#messages').append($('<li>').html(messageTemplate(result)));
-		});
-	});
+    $.get( "/getChat?id="+getParameterByName("id"), function(results) {
+        results.forEach(function(result){
+            $('#messages').append($('<li>').html(messageTemplate(result)));
+        });
+        var height = 0;
+        $('#messages li').each(function(i, value){
+            height += parseInt($(this).height());
+        });
+        height += '';
+        $('#messages').scrollTop(height);
+    });
 }
 
 function getFacilities(){
@@ -106,3 +124,4 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
