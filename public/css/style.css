@@ -322,7 +322,7 @@ p.facName {
  width: 30%;
  position: absolute;
  right: 0;
- top: 18.5%;
+ top: 20.5%;
  margin-left: -10%;
  z-index: 0;
  display:inline-block;
@@ -361,7 +361,7 @@ form>input {
   min-height: 100%;
   max-height: 100%;
   font-family: 'Roboto',sans-serif;
-  font-size: 16px;
+  font-size: 1.3vw;
 }
 
 input:focus {
@@ -376,7 +376,7 @@ input:focus {
   list-style-type: none;
   padding: 0;
   /*height: 550px;*/
-  height: 65vh;
+  height: 60vh;
   overflow: scroll;
   font-size: 1vw;
   font-color: black;
@@ -434,7 +434,7 @@ input:focus {
 }
 
 .posted {
-  font-size: 12px;
+  font-size: 1vw;
   color: #bdbdbd;
   padding-top: 12px;
 }
@@ -446,7 +446,7 @@ input:focus {
   margin-right: 5px;
   word-wrap: break-word;
   color: black;
-  font-size: 2.5vh;
+  font-size: 1.3vw;
 }
 
 @media only screen and (max-width:825px) {

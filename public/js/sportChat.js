@@ -32,8 +32,8 @@ function onSubmit(){
 
     console.log($('#user_input').val().length);
 
-    if($('#user_input').val().length == 0 || $('#user_input').val().length > text_max){
-        alert("Please make your message between 0 and "+text_max+" characters");
+    if($('#user_input').val().length == 1 || $('#user_input').val().length > text_max){
+        alert("Please make your message between 1 and "+text_max+" characters");
     }
     else{
       	console.log(getParameterByName("id"));
@@ -107,7 +107,7 @@ function messageTemplate(template) {
 function facilityTemplate(result, index){
     var template =  '<div class = "facButton">'+
         '<a class = "facButtonAnchor" href = "/fac?id='+result["ids"][index]+'" class="facLink">'+
-        '<img src="'+result["facilities"][index].pic+'" height="120" width="85%"" class = "img">' +
+        '<img src="'+result["facilities"][index].pic+'" height="90vh" width="85%"" class = "img">' +
         '<p class="facName">'+result["facilities"][index].name+'</p>'+
         '</a>'+
         '</div>';
