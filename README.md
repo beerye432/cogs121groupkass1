@@ -2,15 +2,17 @@ COGS 121 Group K Assignment 1
 
 TASKS
 
-- Brian: facilities' pages and json, leaflet
+- Brian: Brian worked on the facilities' pages and json, incorporated Leaflet, added the character limit and error diagnosis popup, the 404 page, fixed routing to facilities, and formatted messages to look like a chatroom.
 
-- Tim: initial setup & skeleton, Twitter, Passport, Mongo history, merge conflicts
+- Tim: Tim worked on the initial setup & skeleton, Twitter, Passport, Mongo history, merge conflicts, added routes to get facilities, and updated facility route to get data.
 
-- Ellen: login page, topbar, overall functionality/design consistency, readme
+- Ellen: Ellen worked on all of the login page, topbar and its routing, logout popup box, hover effects for links, formatting for the 6 chat pages, overall functionality/design consistency of the app, and most of the readme/heuristics.
 
-- Shuyu: Shuyu worked on the six sport chat pages(badminton, basketball, tennis, jogging, volleyball, frisbee), with navbar, hatbox and three buttons for each sport chat page. Clicking on the button will direct the user to the corresponding facilities page(set routes to facilities).
+- Shuyu: Shuyu worked on the six sport chat pages (badminton, basketball, tennis, jogging, volleyball, frisbee), chatbox and three buttons for each sport chat page. Clicking on the button will direct the user to the corresponding facilities page (set routes to facilities).
 
-- Jiaying: sports page, help page
+- Jiaying: Jiaying did sports page skeleton & icons, help page skeleton, and added the character limit visibility for the chatbox.
+
+- Everyone worked on responsiveness
 
 HEURISTICS
 

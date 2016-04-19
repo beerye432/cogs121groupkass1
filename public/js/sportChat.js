@@ -19,8 +19,8 @@ function onSubmit(){
 
     console.log($('#user_input').val().length);
 
-    if($('#user_input').val().length == 0 || $('#user_input').val().length > 140){
-        alert("Please make your message between 0 and 140 characters");
+    if($('#user_input').val().length == 1 || $('#user_input').val().length > 140){
+        alert("Please make your message between 1 and 140 characters");
 
         window.location.href = url;
     }
