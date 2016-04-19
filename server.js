@@ -154,8 +154,10 @@ app.get("/fac", loggedIn, router.fac.view);
 app.get("/fac/:id", loggedIn, router.fac.view);
 app.get("/help", loggedIn, router.help.view);
 
-app.get("/getChat", loggedIn, router.chat.getChatData)
-app.get("/getChat/:id", loggedIn, router.chat.getChatData)
+app.get("/getChat", loggedIn, router.chat.getChatData);
+app.get("/getChat/:id", loggedIn, router.chat.getChatData);
+app.get("/getFacilities", loggedIn, router.chat.getFacilities);
+app.get("/getFacilities/:id", loggedIn, router.chat.getFacilities);
 
 
 io.use(function(socket, next) {
@@ -220,6 +222,9 @@ io.on('connection', function(socket){
   }
 })
 
+app.use(function(req,res){
+    res.render('error404');
+});
 
 // Start Server
 http.listen(app.get("port"), function() {

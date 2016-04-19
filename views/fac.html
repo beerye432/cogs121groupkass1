@@ -1,9 +1,16 @@
 
 		{{>navbar}}
-		<div id = "map" style = "height: 250px; width: 40%; margin-left: 25px; margin-top: 25px; float: left">
+
+		<section id = "pic" style = "margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-top: 0px">
+			<img src = {{pic}} style = 'width:100%; height: 480px'>
+		</section>
+
+		<div id = "map" style = "height: 400px; width: 40%; margin-left: 40px; margin-top: 40px; float: left">
 		</div>
 
-		<div id = "textStuff" style = "float: right; margin-top: 25px; margin-right: 70px; width: 50%">
+		<div id = "textStuff" style = "float: right; margin-top: 40px; margin-right: 70px; width: 50%">
+			<h1 style = 'text-align: center; color: #fec904; font-size: 75px'>{{name}}</h1>
+			<p style = 'text-align: center; color: white; font-size: 35px'>{{description}}</p>
 		</div>
 
 		<section id = "pic" style = "margin-left: 5px; margin-right: 5px; margin-top: 12vh; padding-top: 10px;padding-left:10px;padding-right:10px">
@@ -12,33 +19,8 @@
 		<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 		<script> 
 
-			var facilitiesA = { "facilities": [
-			{"name": "Rimac Auxiliary Gym", "lat": "32.885272", "long": "-117.239172", "pic": "http://sportsfac.ucsd.edu/_images/rimac/aux-gym.jpg", "description": "The Rimac Auxiliary Gym is a great place to find a game of basketball and occasionally volleyball."},
-			{"name": "Muir Courts", "lat": "32.877570", "long": "-117.241977", "pic": "https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg", "description": "Located in the heart of the Muir sports complex, the Muir Courts are some of the most active courts on campus."},
-			{"name": "Revelle Outdoor Courts", "lat": "32.873303", "long": "-117.243103", "pic": "http://www.landscapeonline.com/research/lasn/2014/06/img/25609/25609-7.jpg", "description": "The outdoor basketball courts in Revelle College are one of the best kept secrets on campus if you're looking for a quick game."},
-			{"name": "Main Gym", "lat": "32.877144", "long": "-117.241299", "pic": "http://sportsfac.ucsd.edu/_images/main-gym/main-floor2.jpg", "description": "UCSD's Main Gym features a badminton open gym on Friday and Saturday nights from 6-11. You can also find pick up volleyball games here sometimes as well."},
-			{"name": "Recreation Gym", "lat": "32.876685", "long": "-117.241283", "pic": "http://sportsfac.ucsd.edu/_images/main-gym/rec-gym2.jpg", "description": "The Recreation Gym in Muir offers a wide variety of badminton and volleyball rec classes for all skill levels."},
-			{"name": "Eucalyptus Grove", "lat": "32.883527", "long": "-117.238452", "pic": "http://dirttreaders.com/phpBB3/gallery/pic.php?mode=lrg&pic_id=5781", "description": "The Eucalyptus Grove Trail is a 1 mile-long trail that makes for an interesting jog."},
-			{"name": "UCSD Spanos Track", "lat": "32.889820", "long": "-117.239626", "pic": "http://sportsfac.ucsd.edu/_images/track/track.jpg", "description": "For the more traditional runner, UCSD's Spanos Track Facility features a rubber 400m track that's perfect for runners seeking a controlled surface."},
-			{"name": "Muir Field", "lat": "32.876796", "long": "-117.242801", "pic": "https://sportsfac.ucsd.edu/_files/Muir%20Field%20-%20aerial%20with%20basketball%20and%20tennis%20courts.jpg", "description": "With its newly installed astroturf, Muir Field offers a consistent place to play Ultimate, rain or shine."},
-			{"name": "Warren Field", "lat": "32.880238", "long": "-117.230378", "pic": "http://i.ytimg.com/vi/nE7V-cr78FQ/0.jpg", "description": "Warren Field is a multipurpose grass field located in east campus with plenty of space for a variety of activities."},
-			{"name": "NCRA Field", "lat": "32.887254", "long": "-117.239604", "pic": "http://sportsfac.ucsd.edu/_images/fields/rimac-field4.jpg", "description": "Loacted right outside of RIMAC, the North Campus Recreation Area (NCRA) field is a sprawling multipurpose grass field perfect for your next pick up game of Ultimate."},
-			{"name": "North Campus Courts", "lat": "32.890147", "long": "-117.241704", "pic": "http://sportsfac.ucsd.edu/_images/outdoor/northview-tennis-courts.jpg", "description": "Located at one of the north-most points of campus, the North Campus Courts offer high quality surfaces and nets for a great playing experience."},
-			{"name": "Campus Loop", "lat": "32.882333", "long": "-117.233629", "pic": "http://static1.squarespace.com/static/56b065733c44d81dc1cf6739/t/56cbb3abe32140833fc5509f/1456190429075/", "description": "The Campus Loop circles the campus of UCSD, and is a great place for a run."},
-			{"name": "Marshall College Courts", "lat": "32.883192", "long": "-117.240432", "pic": "http://sportsfac.ucsd.edu/_images/outdoor/ncra-tennis-courts.jpg", "description": "The tennis courts at Marshall College offer a great place to play some casual matches. Be sure to grab a burrito after you are done!"}
-		]}
 
-			var windowNum = window.location.href.split("=");
-
-			//console.log(windowNum);
-
-			var fac = facilitiesA.facilities[parseInt(windowNum[1])];
-
-			$("#textStuff").append("<h1 style = 'text-align: center; padding-top:-15%; margin-top:-10%;margin-bottom:5px;color: #fec904; font-size: 55px'>"+fac.name+"</h1>");
-			$("#pic").append("<img src = '"+fac.pic+"' style = 'width:90%; text-align: center;;height: 250px;margin-top:5px; padding-top:-40px; border-radius: 8px'>");
-			$("#textStuff").append("<p style = 'text-align: center; color: white; font-size: 30px;line-height:1.5'>"+fac.description+"</p>");
-
-			var map = L.map('map').setView([parseFloat(fac.lat), parseFloat(fac.long)], 17);
+			var map = L.map('map').setView([parseFloat({{lat}}), parseFloat({{long}})], 17);
 
 			 mapLink='<a href="http://openstreetmap.org">OpenStreetMap</a>';
 
@@ -47,10 +29,9 @@
 		        maxZoom:18
 		    }).addTo(map);
 
-		    var marker = L.marker([parseFloat(fac.lat), parseFloat(fac.long)]).addTo(map);
+		    var marker = L.marker([parseFloat({{lat}}), parseFloat({{long}})]).addTo(map);
 
 		</script>
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/socket.io.min.js"></script>
 		<script src="./js/chatbox.js"></script>
-		<script src="./js/search.js"></script>
