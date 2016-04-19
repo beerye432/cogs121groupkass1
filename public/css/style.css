@@ -200,22 +200,14 @@ li.logout-list a{
   /*display: inline-block;*/
   margin: 0px;
   width: 15%;
-  opacity: 0.8;
+  opacity: 0.6;
   z-index: 2;
 }
 
 .icon img:hover {
-    opacity: 1;
+    opacity: 1.2;
 }
 
-@font-face {
-   font-family:fox in the snow;
-   src:url(fox in the snow.ttf);
-}
-@font-face {
-  font-family:Typewriter;
-  src:url(Typewriter Press.ttf);
-}
 
 /***** End of sports page code *****/
 
