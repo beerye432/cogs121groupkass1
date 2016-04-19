@@ -8,7 +8,7 @@ TASKS
 
 - Ellen: login page, topbar, overall functionality/design consistency, readme
 
-- Shuyu: sport chat pages & routes to facilities
+- Shuyu: Shuyu worked on the six sport chat pages(badminton, basketball, tennis, jogging, volleyball, frisbee), with navbar, hatbox and three buttons for each sport chat page. Clicking on the button will direct the user to the corresponding facilities page(set routes to facilities).
 
 - Jiaying: sports page, help page
 
@@ -30,7 +30,7 @@ HEURISTICS
 
 8. Aesthetic and Minimalist Design - This is addressed with using icons to represent words (e.g., back, logout, sports) and the overall lack of text, keeping only what is most important and pleasing to the eye.
 
-9. Help Users Recognize, Diagnose, and Recover from Errors
+9. Help Users Recognize, Diagnose, and Recover from Errors - This is addressed with having a pop-up message when users try to type more 140 characters in the chat box in the sport-chat page.
 
 10. Help and Documentation - This is addressed with a Help page.
 
